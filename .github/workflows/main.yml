@@ -1,0 +1,27 @@
+name : dot net testing
+
+on : 
+  push : 
+    branches :
+    - main 
+  workflow-dispatch :
+
+jobs :
+  dot-net :
+    runs-on : self-hosted 
+
+    steps :
+    - name : checkout stage
+      uses: actions/checkout@v2
+      
+    - name : setting up dot-net 
+      uses: actions/setup-dotnet@v3
+
+    - name : Restore dependencies 
+      run : dotnet restore dotnet-hello-world.sln
+
+    - name : Display dotnet version
+      run : dotnet --version
+
+    - name : build
+      run : dotnet build dotnet-hello-world.sln
