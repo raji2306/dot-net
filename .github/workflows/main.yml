@@ -8,7 +8,7 @@ on :
 
 defaults :
   run :
-    working-directory : D:\test
+    working-directory : 'D:\Documents\Downloads\dotnet-sdk-6.0.124-win-x86'
 
 jobs :
   dot-net :
