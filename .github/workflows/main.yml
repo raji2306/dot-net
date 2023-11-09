@@ -6,6 +6,10 @@ on :
     - main 
   workflow_dispatch :
 
+defaults :
+  run :
+    working-directory : D:\test
+
 jobs :
   dot-net :
     runs-on : self-hosted 
@@ -13,6 +17,9 @@ jobs :
     steps :
     - name : checkout stage
       uses: actions/checkout@v2
+
+    - name : change dir
+      run : cd 'D:\test'
 
     - name: Setup dotnet
       uses: actions/setup-dotnet@v3
