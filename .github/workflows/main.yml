@@ -10,42 +10,24 @@ defaults :
   run :
     working-directory : 'D:\Documents\Downloads\dotnet-sdk-6.0.124-win-x86'
 
-jobs :
-  dot-net :
-    runs-on : self-hosted 
+jobs:
+  dot-net:
+    runs-on: self-hosted
 
-    steps :
-    - name : checkout stage
-      uses: actions/checkout@v2
+    steps:
+      - name: checkout stage
+        uses: actions/checkout@v2
 
-    # - name : change dir
-    #   run : cd 'D:\test'
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 6.0.124
 
-    - name: Setup dotnet
-      uses: actions/setup-dotnet@v3
-      # with:
-      #   dotnet-version:  5.0
-    # - name : chekc ir
-    #   run : ${{ github.workspace }}
+      - name: Restore dependencies
+        run: dotnet restore dotnet-hello-world.sln
 
-
-    # - name: .NET Restore
-    #   uses: zyactions/dotnet-restore@v1
-    #   with:
-    #     workspace: dotnet-hello-world.sln
-
-    # - run : cd 'D:\Documents\Downloads\dotnet-sdk-6.0.124-win-x86'
+      - name: Display dotnet version
+        run: dotnet --version
         
-    - name : Restore dependencies 
-      run : |
-          # dotnet restore --locked-mode
-          # cd 'D:\Documents\Downloads\dotnet-sdk-6.0.124-win-x86\'
-          # D:\Documents\Downloads\dotnet-sdk-6.0.124-win-x86\dotnet restore dotnet-hello-world.sln
-          # ${{ github.workspace }}
-          dotnet restore dotnet-hello-world.sln
-
-    - name : Display dotnet version
-      run : dotnet --version
-
-    - name : build
-      run : dotnet restore ./dotnet-hello-world.sln
+      -  name : build
+         run : dotnet restore ./dotnet-hello-world.sln
