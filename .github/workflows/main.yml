@@ -14,10 +14,10 @@ jobs :
     - name : checkout stage
       uses: actions/checkout@v2
 
-    - name : setting up dot-net 
+    - name: Setup dotnet
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 3.1.32
+        dotnet-version: 3.1.x
         
     - name : Restore dependencies 
       run : |
