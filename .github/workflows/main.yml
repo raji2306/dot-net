@@ -19,7 +19,7 @@ jobs :
 
     - name : Restore dependencies 
       run : |
-          dotnet tool install -g dotnet-restore
+          dotnet restore
           dotnet restore dotnet-hello-world.sln
 
     - name : Display dotnet version
