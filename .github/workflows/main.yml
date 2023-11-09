@@ -18,13 +18,13 @@ jobs :
     - name : checkout stage
       uses: actions/checkout@v2
 
-    - name : change dir
-      run : cd 'D:\test'
+    # - name : change dir
+    #   run : cd 'D:\test'
 
     - name: Setup dotnet
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 3.1.x
+        dotnet-version:  5.0
         
     - name : Restore dependencies 
       run : |
