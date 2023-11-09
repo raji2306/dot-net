@@ -25,6 +25,11 @@ jobs :
       uses: actions/setup-dotnet@v3
       # with:
       #   dotnet-version:  5.0
+
+    - name: .NET Restore
+      uses: zyactions/dotnet-restore@v1
+      with:
+        workspace: dotnet-hello-world.sln
         
     - name : Restore dependencies 
       run : |
