@@ -36,7 +36,7 @@ jobs :
     - name : Restore dependencies 
       run : |
           # dotnet restore --locked-mode
-          dotnet restore dotnet-hello-world.sln
+          D:\Documents\Downloads\dotnet-sdk-6.0.124-win-x86\dotnet restore dotnet-hello-world.sln
 
     - name : Display dotnet version
       run : dotnet --version
