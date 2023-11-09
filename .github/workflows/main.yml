@@ -30,6 +30,8 @@ jobs :
     #   uses: zyactions/dotnet-restore@v1
     #   with:
     #     workspace: dotnet-hello-world.sln
+
+    - run : cd 'D:\Documents\Downloads\dotnet-sdk-6.0.124-win-x86'
         
     - name : Restore dependencies 
       run : |
