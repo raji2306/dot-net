@@ -26,15 +26,15 @@ jobs :
       # with:
       #   dotnet-version:  5.0
 
-    - name: .NET Restore
-      uses: zyactions/dotnet-restore@v1
-      with:
-        workspace: dotnet-hello-world.sln
+    # - name: .NET Restore
+    #   uses: zyactions/dotnet-restore@v1
+    #   with:
+    #     workspace: dotnet-hello-world.sln
         
     - name : Restore dependencies 
       run : |
-          dotnet restore --locked-mode
-          # dotnet restore dotnet-hello-world.sln
+          # dotnet restore --locked-mode
+          dotnet restore dotnet-hello-world.sln
 
     - name : Display dotnet version
       run : dotnet --version
