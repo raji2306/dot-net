@@ -16,11 +16,14 @@ jobs :
       
     - name : setting up dot-net 
       uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 3
+        
 
     - name : Restore dependencies 
       run : |
-          dotnet restore
-          dotnet restore dotnet-hello-world.sln
+          dotnet restore --locked-mode
+          # dotnet restore dotnet-hello-world.sln
 
     - name : Display dotnet version
       run : dotnet --version
