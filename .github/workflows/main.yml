@@ -13,12 +13,10 @@ jobs :
     steps :
     - name : checkout stage
       uses: actions/checkout@v2
-      
+
+
     - name : setting up dot-net 
       uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: 3
-        
 
     - name : Restore dependencies 
       run : |
