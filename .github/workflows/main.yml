@@ -34,12 +34,15 @@ jobs :
     #   with:
     #     workspace: dotnet-hello-world.sln
 
-    - run : cd 'D:\Documents\Downloads\dotnet-sdk-6.0.124-win-x86'
+    # - run : cd 'D:\Documents\Downloads\dotnet-sdk-6.0.124-win-x86'
         
     - name : Restore dependencies 
       run : |
           # dotnet restore --locked-mode
-          D:\Documents\Downloads\dotnet-sdk-6.0.124-win-x86\dotnet restore dotnet-hello-world.sln
+          cd 'D:\Documents\Downloads\dotnet-sdk-6.0.124-win-x86\'
+          # D:\Documents\Downloads\dotnet-sdk-6.0.124-win-x86\dotnet restore dotnet-hello-world.sln
+
+          dotnet restore 'D:\Desktop\dotty\_work\dot-net\dot-net\dotnet-hello-world.sln'
 
     - name : Display dotnet version
       run : dotnet --version
