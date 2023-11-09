@@ -41,8 +41,8 @@ jobs :
           # dotnet restore --locked-mode
           # cd 'D:\Documents\Downloads\dotnet-sdk-6.0.124-win-x86\'
           # D:\Documents\Downloads\dotnet-sdk-6.0.124-win-x86\dotnet restore dotnet-hello-world.sln
-
-          dotnet restore dotnet-hello-world.sln
+          ${{ github.workspace }}
+          dotnet restore ../dotnet-hello-world.sln
 
     - name : Display dotnet version
       run : dotnet --version
