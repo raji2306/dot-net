@@ -18,7 +18,9 @@ jobs :
       uses: actions/setup-dotnet@v3
 
     - name : Restore dependencies 
-      run : dotnet restore dotnet-hello-world.sln
+      run : |
+          dotnet tool install -g dotnet-restore
+          dotnet restore dotnet-hello-world.sln
 
     - name : Display dotnet version
       run : dotnet --version
