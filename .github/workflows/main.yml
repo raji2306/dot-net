@@ -30,4 +30,4 @@ jobs:
         run: dotnet --version
         
       -  name : build
-         run : dotnet restore ./dotnet-hello-world.sln
+         run : dotnet build "D:\Desktop\dotty\_work\dot-net\dot-net\dotnet-hello-world.sln"
