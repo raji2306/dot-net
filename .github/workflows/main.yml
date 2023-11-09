@@ -25,6 +25,9 @@ jobs :
       uses: actions/setup-dotnet@v3
       # with:
       #   dotnet-version:  5.0
+    - name : chekc ir
+      run : ${{ github.workspace }}
+
 
     # - name: .NET Restore
     #   uses: zyactions/dotnet-restore@v1
