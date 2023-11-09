@@ -1,8 +1,9 @@
 name : dot net testing
 
 on : 
-  push :
-  - branches : master 
+  push : 
+    branches :
+    - main 
   workflow-dispatch :
 
 jobs :
